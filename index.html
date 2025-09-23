@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="programmer, coding, c#, games developer, software developer, cv" />
+        <meta name="description" content="Games and software developer interested in c# engine development." />
+        <title>Khoirul Anam</title>
+
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="static/css/skeleton.css">
+        <link rel="stylesheet" type="text/css" href="static/css/landing.css">
+        <link rel="stylesheet" type="text/css" href="static/css/career.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- project tab css--> 
+        <link rel="stylesheet" type="text/css" href="./styles/project_styles/mirage.css"/>
+        <link rel="stylesheet" type="text/css" href="./styles/project_styles/exalted.css"/>
+        <link rel="stylesheet" type="text/css" href="./styles/project_styles/15_puzzle.css"/>
+        <link rel="stylesheet" type="text/css" href="./styles/project_styles/game_tech.css"/>
+        <link rel="stylesheet" type="text/css" href="./styles/project_styles/vpa.css"/>
+
+        <!-- icon -->
+        <link rel="icon" type="image/png" href="/static/assets/image/icon.png">
+
+        <!-- scripts -->
+        <script src="static/js/scripts/quick_links.js"></script>
+    </head>
+
+    <body id="top">  
+        <div class="container" style="margin-top: 1%" align="center">   
+            <div id="title">Khoirul Anam</div>            
+            <img class="landing_logo" src="/static/assets/image/profile.png" alt="Portrait" style="border-radius: 180px;">
+            <div id="quick_links">
+                <p id ="tooltip">Quick Links</p>
+                <a href="mailto:anam09061@gmail.com" target="_blank" onmouseover="setTooltipText('Email Me!')" onmouseout="resetTooltip()"><i class="fa fa-envelope"></i></a>
+                <a href="https://github.com/nammm01" target="_blank" onmouseover="setTooltipText('Check Out My GitHub!')" onmouseout="resetTooltip()"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/khoirulanam1" target="_blank" onmouseover="setTooltipText('Check Out My LinkedIn!')" onmouseout="resetTooltip()"><i class="fa fa-linkedin"></i></a>
+                <a href="static/assets/lib/CV.pdf" target="_blank" onmouseover="setTooltipText('Download My CV!')" onmouseout="resetTooltip()"><i class="fa fa-file-text"></i></a>
+                <a href="https://www.youtube.com/@nammm_01" target="_blank" onmouseover="setTooltipText('Check Out My Youtube!')" onmouseout="resetTooltip()"><i class="fa fa-youtube"></i></a>
+                <a href="https://www.instagram.com/anam_0110/" target="_blank" onmouseover="setTooltipText('Check Out My Instagram!')" onmouseout="resetTooltip()"><i class="fa fa-instagram"></i></a>
+            </div>
+            <hr>
+            <div id="about_me">Hi there and thanks for stopping by!
+                <br>My name is Khoirul Anam. I'm a programmer who loves turning ideas into interactive experiences.
+Currently exploring about game development.</div>
+            <hr>
+
+            <section class="buttons">
+                <div class="button_container">
+                    <div id="projects-Button" class="btn btn-5 kd-button" onClick="document.getElementById('project_data_area').style.opacity = 0;">Projects</div> 
+                    <div id="education-Button" class="btn btn-5 kd-button" onClick="document.getElementById('project_data_area').style.opacity = 0;">Education</div> 
+                    <div id="work-Button" class="btn btn-5 kd-button" onClick="document.getElementById('project_data_area').style.opacity = 0;">Work</div>
+                    <div id="skills-Button" class="btn btn-5 kd-button" onClick="document.getElementById('project_data_area').style.opacity = 0;">Skills</div> 
+                </div>
+            </section>
+        </div>
+
+        <!-- Scripts used in top body -->
+        <script src="static/js/scripts/text_animation.js"></script>
+    </body>
+
+    <div id="bottom">
+        <!-- Data_Labels -->
+        <div id="data_selection_area" class="container kd-selection-content" style="opacity: 0;"></div>
+        <div id="project_data_area" class="container kd-selection-content" style="opacity: 0;"></div>
+        <script src="static/js/scripts/button_nav_selection.js"></script>
+        <script src="static/js/scripts/button_nav_proj.js"></script>
+    </div>
+</html>
