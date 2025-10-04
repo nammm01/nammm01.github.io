@@ -1,0 +1,156 @@
+<hr>
+
+<div id="title">PushBox (Sokoban)</div>
+
+<div id="description">"Puzzle game"</div>
+<br>
+
+<div id="tldr">
+    <img src="https://img.shields.io/badge/Build%20Date-04.11.2023-informational" alt="date" />
+    <img src="https://img.shields.io/badge/Category-Game Development-FF64FF" alt="category" />
+    <img src="https://img.shields.io/badge/Language-Java-brightgreen" alt="language" />
+</div>
+<!-- <div id="github_link_puzzle">    
+    <a href="https://github.com/Kney-Delach/Elysium-Puzzle-Engine " target="_blank"><i id="github_link_exalted" class="fa fa-github"></i></a>
+</div> -->
+
+<div id="puzzle_body">
+    <div class="puzzle_text">
+        <br>
+        <br>
+        <img class="img_pushbox1" src="./static/assets/image/pushbox/tile.png" alt="">
+        <img class="img_pushbox1" src="./static/assets/image/pushbox/environment_06.png" alt="">
+        <img class="img_pushbox1" src="./static/assets/image/pushbox/player.gif" alt="">
+        <img class="img_pushbox1" src="./static/assets/image/pushbox/crate.png" alt="">
+        <img class="img_pushbox1" src="./static/assets/image/pushbox/block_04.png" alt="">
+        <br>
+        <br>
+        <img class="img_pushbox" src="./static/assets/image/pushbox/preview2.png" alt="">
+        <img class="img_pushbox" src="./static/assets/image/pushbox/preview1.png" alt="">
+        <br>
+        <br>
+        <div class="text_box">
+            PushBox adalah adaptasi dari game klasik Sokoban dengan gameplay sederhana: pemain menggerakkan karakter 
+            untuk mendorong kotak ke posisi tujuan. Walau sederhana, game ini menghadirkan tantangan strategis yang melatih logika dan perencanaan langkah.
+        </div>
+        <br>
+        <div class="row" style="display: flex;">
+            <div class="column">
+                <div class="text_box">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Gameplay sederhana namun menantang: mendorong kotak hingga ke posisi tujuan tanpa jalan mundur, hanya opsi reset</li>
+                        <li>Nostalgia klasik: berdasarkan game populer era 1980-an (MS-DOS, Nintendo)</li>
+                        <li>Multi-platform ready: dapat diakses melalui smartphone, tablet, maupun komputer</li>
+                        <li>Cognitive training: melatih kecerdasan dan kemampuan memilih jalur</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column">
+                <div class="text_box">
+                    <h3>Development</h3>
+                    <ul>
+                        <li>Bahasa pemrograman: Java</li>
+                        <li>IDE: Visual Studio Code dengan Extension Pack for Java</li>
+                        <li>Library: javax.swing (GUI & event), java.awt (komponen UI), java.io (file I/O), java.util (struktur data)</li>
+                        <li>Struktur kode:
+                            <ul>
+                                <li>pushthebox → kelas utama (Main.java)</li>
+                                <li>player → kelas aktor (player, point, wall, crate) serta resource</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>          
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>
+<br>
+
+<style>
+    @font-face {
+        font-family: Grandmaster;
+        src: url("/static/assets/lib/Montserrat-Medium.ttf");
+    }
+
+    .img_pushbox{
+        width: 450px;
+    }
+    .img_pushbox1{
+        width: 100px;
+    }
+
+    .text_box{
+        background-color: rgba(255, 255, 255, 0);
+        background: rgba(255, 255, 255, 0);
+        color: white;
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+        border-radius: 3px;
+        padding: 20px;
+        text-align: left; 
+        box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.6);
+    }
+    ul{
+        list-style-position: outside;
+        padding-left: 1.2em;           /* jarak bullet ke teks */ 
+        list-style-type: disc;  /* pakai lingkaran default */
+    }
+
+    li {
+        padding-left: 1em;           /* kasih ruang biar baris pertama nggak numpuk bullet */
+    }
+
+
+    #title
+    {
+        color: rgba(255, 255, 255, 255);
+        /* -webkit-text-stroke: 2px rgb(255, 255, 255); */
+        font-family: 'Major Mono Display', monospace;
+        font-size: 5.8rem; 
+        letter-spacing: +0.7rem;
+        text-align: center;
+    } 
+
+
+    #github_link_puzzle
+    {
+        align-self: center;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    #description
+    {
+        font-family: 'Grandmaster';
+        color: rgba(255, 255, 255, 255);
+        text-align: center;
+        font-size: 25px;
+    }
+
+    #tldr
+    {
+        text-align: center;
+    }
+
+    #puzzle_body
+    {
+        text-align: center;
+        font-family: 'Grandmaster';
+    }
+
+    #puzzle_youtube
+    {
+        text-align: center;
+    }
+
+    .puzzle_text
+    {
+        color: rgba(255, 255, 255, 255);
+        font-size: 1.8rem; 
+        letter-spacing: -.05rem;
+    } 
+
+
+</style>

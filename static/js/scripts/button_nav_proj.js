@@ -7,7 +7,7 @@ const ProjectNames =
     "mapex",
     "mirage",
     "exalted",
-    "15_puzzle",
+    "pushbox",
     "game_tech",
     "vpa"
 ]

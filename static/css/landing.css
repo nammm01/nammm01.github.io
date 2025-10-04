@@ -59,59 +59,7 @@ h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
 
     /* DEBUG VARIABLES */
     border: 0px solid rgb(255, 102, 0);
-}
-
-/* List for buttons */
-ul 
-{
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    align-self:center;
-    width: max-content; /* Takes up full width of screen */
-    border: 0px solid rgb(255, 102, 0);
-    padding: 0;
-
-}
-
-ul li 
-{
-    align-self:center;
-    border: 0px solid rgba(92, 250, 0, 0.938);
-
-    /* display: block; */
-    width: max-content; /* Takes up full width of screen */
-}
-
-ul li a 
-{
-    align-self:center;
-
-    --fill-color: #ffffff;
-    --fill-color_outer: #ffffff;
-    width: max-content; /* Takes up full width of screen */    
-    display: block;
-    font-family: "Grandmaster", "monospace";
-    font-size: 3rem;
-    font-weight: 100;
-    text-decoration: none;
-    text-transform: uppercase;
-    -webkit-text-stroke: 2px var(--fill-color_outer);
-    background: linear-gradient(90deg, var(--fill-color) 100%, var(--fill-color) 100%);
-    background-size: 0;
-    background-position: left;
-    background-repeat: no-repeat;
-    color: transparent;
-    -webkit-background-clip: text;
-            background-clip: text;
-    transition: 0.35s linear;
-}
-
-ul li a:hover 
-{
-    background-size: 100%;
-}
-  
+}  
 
 /* Shortcut links */
 #quick_links 
@@ -330,13 +278,12 @@ letter.initial
   border: 2px solid white;
 	position: relative;
 	display: inline-block;
-	border-radius: 50%;
 	overflow: hidden;
 	transition: transform .3s;
-	max-width:10vh;
-	min-width:10vh;
-  min-height:10vh;
-	max-height:10vh;
+	max-width:13vh;
+	min-width:13vh;
+  min-height:13vh;
+	max-height:13vh;
   vertical-align: middle;
 }
 
@@ -353,14 +300,13 @@ letter.initial
 	position: relative;
 	display: inline-block;
 	border: 2px solid yellow;
-	border-radius: 50%;
 	overflow: hidden;
 	transition: transform .3s;
 	vertical-align: middle;
-	max-width:10vh;
-	min-width:10vh;
-  min-height:10vh;
-	max-height:10vh;
+	max-width:13vh;
+	min-width:13vh;
+  min-height:13vh;
+	max-height:13vh;
 }
 
 .proj-button-active:hover
