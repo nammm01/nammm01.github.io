@@ -1,18 +1,17 @@
 <hr>
 
-<div id="title">PushBox (Sokoban)</div>
+<div id="title">Parucare</div>
 
-<!-- <div id="description">"Puzzle game"</div> -->
+<div id="description">"Puzzle game"</div>
 <br>
 
 <div id="tldr">
     <img src="https://img.shields.io/badge/Build%20Date-04.11.2023-informational" alt="date" />
     <img src="https://img.shields.io/badge/Category-Game Development-FF64FF" alt="category" />
     <img src="https://img.shields.io/badge/Language-Java-brightgreen" alt="language" />
-</div> 
-<div id="github_link">
-    <h6 style="font-family: Grandmaster; color: #ffffff; margin-bottom: -20px;">Source code and app</h6>
-    <a href="https://github.com/nammm01/pushbox-sokoban" target="_blank"><i class="fa fa-github"></i></a>
+</div>
+<div id="github_link">    
+    <a href="https://github.com/nammm01/pushbox-sokoban" target="_blank"><i id="github_link_exalted" class="fa fa-github"></i></a>
 </div>
 
 <div id="puzzle_body">
@@ -31,37 +30,39 @@
         <br>
         <br>
         <div class="text_box">
-            PushBox is an adaptation of the classic game sokoban with simple gameplay. This game requires player move the character
-            to push box to destination which has been marked. Even if it's simple, this game provide a challange that train logic and planning step.
+            PushBox adalah adaptasi dari game klasik Sokoban dengan gameplay sederhana: pemain menggerakkan karakter 
+            untuk mendorong kotak ke posisi tujuan. Walau sederhana, game ini menghadirkan tantangan strategis yang melatih logika dan perencanaan langkah.
         </div>
         <br>
-        <div class="text_box">
-            <h4>Development</h4>
-            <ul>
-                <li>Programming language : Java</li>
-                <li>IDE : Visual Studio Code</li>
-                <li>Library : javax.swing (GUI & event), java.awt (komponen UI), java.io (file I/O), java.util (struktur data)</li>
-                <li>Code structure :
+        <div class="row" style="display: flex;">
+            <div class="column">
+                <div class="text_box">
+                    <h3>Key Features</h3>
                     <ul>
-                        <li>pushthebox → main class (Main.java)</li>
-                        <li>player → player class (player, point, wall, crate) and resources</li>
+                        <li>Gameplay sederhana namun menantang: mendorong kotak hingga ke posisi tujuan tanpa jalan mundur, hanya opsi reset</li>
+                        <li>Nostalgia klasik: berdasarkan game populer era 1980-an (MS-DOS, Nintendo)</li>
+                        <li>Multi-platform ready: dapat diakses melalui smartphone, tablet, maupun komputer</li>
+                        <li>Cognitive training: melatih kecerdasan dan kemampuan memilih jalur</li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </div>
+            <div class="column">
+                <div class="text_box">
+                    <h3>Development</h3>
+                    <ul>
+                        <li>Bahasa pemrograman: Java</li>
+                        <li>IDE: Visual Studio Code dengan Extension Pack for Java</li>
+                        <li>Library: javax.swing (GUI & event), java.awt (komponen UI), java.io (file I/O), java.util (struktur data)</li>
+                        <li>Struktur kode:
+                            <ul>
+                                <li>pushthebox → kelas utama (Main.java)</li>
+                                <li>player → kelas aktor (player, point, wall, crate) serta resource</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>          
+            </div>
         </div>
-        <br>
-        <div class="text_box">
-            <h4>Special Thanks</h4>
-            <ul>
-                <li>To our lecturer, Muhammad Jauharul Fuady, S.T., M.T., for his guidance in this course</li>
-                <li>To all team members for their collaboration and hard work</li>
-                <li>To Kenney for providing free game assets 
-                    <a href="https://kenney.nl/assets/sokoban" target="_blank">Sokoban Asset Pack</a>
-                </li>
-
-            </ul>
-        </div>
-        
         <br>
         <br>
     </div>
@@ -113,9 +114,8 @@
     } 
 
 
-    #github_link
+    #github_link_puzzle
     {
-        margin-top: 20px;
         align-self: center;
         text-align: center;
         font-size: 50px;
