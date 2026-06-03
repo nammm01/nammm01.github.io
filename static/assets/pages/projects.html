@@ -8,7 +8,9 @@
 <div class="project-filter">
     <button onclick="filterProjects('all')">All</button>
     <button onclick="filterProjects('game')">Game</button>
-    <button onclick="filterProjects('website')">Website</button>
+    <button onclick="filterProjects('web')">Website</button>
+    <button onclick="filterProjects('py')">Python</button>
+    <button onclick="filterProjects('java')">Java</button>
     <button onclick="filterProjects('ml')">Machine Learning</button>
 </div>
 
@@ -16,14 +18,18 @@
 
 <div id="proj-button-section">
     <!-- Game -->
-    <div id="pushbox" class="proj-button game" onclick="LoadProject(this,0);">
+    <div id="pushbox" class="proj-button game java" onclick="LoadProject(this,0);">
         <img class="u-max-full-width proj-button-img" src="/static/assets/image/pushbox/thumbnail.png" alt="PushBox">
     </div>
 
     <!-- Website -->
-    <!-- <div id="parucare" class="proj-button website" onclick="LoadProject(this,1);">
-        <img class="u-max-full-width proj-button-img" src="/static/assets/image/pacside/thumbnail.png" alt="PacSide">
-    </div> -->
+    <div id="parucare" class="proj-button web ml" onclick="LoadProject(this,1);">
+        <img class="u-max-full-width proj-button-img" src="/static/assets/image/parucare/thumbnail.png" alt="Parucare">
+    </div>
+
+    <div id="pushbox" class="proj-button game py" onclick="LoadProject(this,2);">
+        <img class="u-max-full-width proj-button-img" src="/static/assets/image/snakesandladders/thumbnail.png" alt="Snakes and ladders">
+    </div>
 </div>
 
 <!-- NEW: Project Modal Popup Structure -->

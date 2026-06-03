@@ -2,7 +2,8 @@
 
 const ProjectNames = [
     "pushbox",
-    "parucare"
+    "parucare",
+    "snake-pygame"
 ];
 
 let ProjectText = [];
