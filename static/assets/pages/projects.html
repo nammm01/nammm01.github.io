@@ -1,30 +1,108 @@
 <hr>
-<div id="pt">Browse through a selection of my projects with the buttons below!</div>
+<div id="pt">
+    Browse through a selection of my projects with the buttons below!
+</div>
+
+<br>
+
+<div class="project-filter">
+    <button onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('game')">Game</button>
+    <button onclick="filterProjects('website')">Website</button>
+    <button onclick="filterProjects('ml')">Machine Learning</button>
+</div>
+
 <br>
 
 <div id="proj-button-section">
-    <script src="./scripts/button_nav_proj.js"></script>
-    <!-- <div id="mapex-button" class="proj-button" onClick="LoadProject(this,0);">
-        <img class="u-max-full-width proj-button-img" src="./Data/images/mapex_icon.png" alt="Mapex">
+    <!-- Game -->
+    <div id="pushbox" class="proj-button game" onclick="LoadProject(this,0);">
+        <img class="u-max-full-width proj-button-img" src="/static/assets/image/pushbox/thumbnail.png" alt="PushBox">
     </div>
-    <div id="mirage-button" class="proj-button" onClick="LoadProject(this,1);">
-        <img class="u-max-full-width proj-button-img" src="./Data/images/mirage_icon.png" alt="Mirage">
-    </div>
-    <div id="exalted-button" class="proj-button" onClick="LoadProject(this,2);">
-        <img class="u-max-full-width proj-button-img" src="./Data/images/exalted_icon.png" alt="Exalted">
-    </div> -->
-    <!-- <div id="website_parucare" class="proj-button" onClick="LoadProject(this,3);">
-        <img class="u-max-full-width proj-button-img" src="/static/assets/image/pushbox/crate.png" alt="website_parucare">
-    </div> -->
-    <div id="pushbox" class="proj-button" onClick="LoadProject(this,3);">
-        <img class="u-max-full-width proj-button-img" src="/static/assets/image/pushbox/thumbnail.png" alt="pushbox">
-    </div>
-    <!-- <div id="game_tech-button" class="proj-button" onClick="LoadProject(this,4);">
-        <img class="u-max-full-width proj-button-img" src="./Data/images/gametech_icon.png" alt="Game_Tech">
-    </div>
-    <div id="vpa-button" class="proj-button" onClick="LoadProject(this,5);">
-        <img class="u-max-full-width proj-button-img" src="./Data/images/vpa_icon.png" alt="Vpa">
+
+    <!-- Website -->
+    <!-- <div id="parucare" class="proj-button website" onclick="LoadProject(this,1);">
+        <img class="u-max-full-width proj-button-img" src="/static/assets/image/pacside/thumbnail.png" alt="PacSide">
     </div> -->
 </div>
 
+<!-- NEW: Project Modal Popup Structure -->
+<div id="project-modal" class="modal-overlay" onclick="CloseModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal-btn" onclick="CloseModal()">&times;</span>
+        <div id="project_data_area"></div>
+    </div>
+</div>
 
+<style>
+    .project-filter {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .project-filter button {
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    #proj-button-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .proj-button {
+        cursor: pointer;
+    }
+
+    /* NEW: Modal Overlay (Dark background) */
+.modal-overlay {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Safari */
+
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+    /* NEW: Modal Box */
+    .modal-content {
+        background-image: url(/static/assets/image/bg.png);
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 1000px;
+        width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    /* NEW: Close Button */
+    .close-modal-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .close-modal-btn:hover {
+        color: #ff0000;
+    }
+</style>

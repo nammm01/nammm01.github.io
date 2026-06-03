@@ -2,109 +2,146 @@
     This script handles the navigation selection between the main content buttons.
 */
 
-const ContentNames = 
+const ContentNames =
 [
     "projects",
     "education",
     "work",
-    "skills"
+    "skills",
+    "achievements"
 ];
 
 const TextAreaMinHeightExtended = "0px";
 const TextAreaMinHeightClosed = "0px";
-const TransitionDuration = 0;
+const TransitionDuration = 200;
 
 let IncludeText = [];
 let lastButtonIndex = -1;
 let buttonLock = false;
 
-/* Adds the included text data into the array of text. */
-for(let i = 0; i < ContentNames.length; ++i)
+/* Load all html pages */
+for (let i = 0; i < ContentNames.length; ++i)
 {
     IncludeText.push("");
+
     fetch("/static/assets/pages/" + ContentNames[i] + ".html")
-    .then( r => r.text() )
-    .then( t => IncludeText[i] = t )
+        .then(response => response.text())
+        .then(text =>
+        {
+            IncludeText[i] = text;
+        })
+        .catch(error =>
+        {
+            console.error("Failed to load:", ContentNames[i], error);
+        });
 }
 
-/* Display the included text for the correct content. */
-
-function revealIncludeText(textArea, i) 
+/* Show content */
+function revealIncludeText(textArea, index)
 {
-    if (textArea.style.opacity == 0) /* Case: Not currently displaying anything in this text area */
+    if (!IncludeText[index])
     {
-        document.body.style.height = "200vh";
-        textArea.innerHTML = IncludeText[i];
+        textArea.innerHTML = "<p>Loading...</p>";
         textArea.style.opacity = 1;
-	}
-    else  /* Case where area is already displayed some data */
-    {
-        textArea.style.opacity = 0; 
-        setTimeout(function()
-        {
-			textArea.innerHTML = IncludeText[i];
-			textArea.style.opacity = 1;
-		}, TransitionDuration / 2);
+        return;
     }
-    
+
+    if (textArea.style.opacity === "0" || textArea.style.opacity === "")
+    {
+        textArea.innerHTML = IncludeText[index];
+        textArea.style.opacity = "1";
+    }
+    else
+    {
+        textArea.style.opacity = "0";
+
+        setTimeout(() =>
+        {
+            textArea.innerHTML = IncludeText[index];
+            textArea.style.opacity = "1";
+        }, TransitionDuration / 2);
+    }
 }
 
-/* Called when the DOM content is loaded. */
-document.addEventListener('DOMContentLoaded', function()
+/* Hide content */
+function hideIncludeText(textArea)
 {
-    let textArea = document.getElementById("data_selection_area");
+    textArea.style.opacity = "0";
+
+    setTimeout(() =>
+    {
+        textArea.innerHTML = "";
+        textArea.style.minHeight = TextAreaMinHeightClosed;
+    }, TransitionDuration / 2);
+}
+
+document.addEventListener("DOMContentLoaded", function ()
+{
+    const textArea = document.getElementById("data_selection_area");
+    const projectArea = document.getElementById("project_data_area");
+
     let buttons = [];
-    
-    for (let i = 0; i < ContentNames.length; ++i) 
+
+    for (let i = 0; i < ContentNames.length; ++i)
     {
-		buttons.push(document.getElementById(ContentNames[i] + "-Button")); /* Add all relevant buttons to array. */
+        buttons.push(
+            document.getElementById(ContentNames[i] + "-Button")
+        );
     }
-    
-    /* Add event listener to buttons for click events */
-    for (let i = 0; i < buttons.length; ++i) 
+
+    for (let i = 0; i < buttons.length; ++i)
     {
-        buttons[i].addEventListener("click", function() 
+        buttons[i].addEventListener("click", function ()
         {
-            if (!buttonLock) 
+            if (buttonLock)
+                return;
+
+            buttonLock = true;
+
+            if (i === lastButtonIndex)
             {
-                if (lastButtonIndex >= 0) 
+                buttons.forEach(button =>
                 {
-					buttons[lastButtonIndex].class = "kd-button";
-				}
-                if (i != lastButtonIndex) 
+                    button.className = "btn btn-5 kd-button";
+                });
+
+                hideIncludeText(textArea);
+
+                if (projectArea)
                 {
-					buttons[i].class = "kd-button";
-                    for (let j = 0; j < buttons.length; ++j) 
-                    {
-						buttons[j].class = j != i ? "kd-button-idle" : buttons[j].class;
-					}
-					revealIncludeText(textArea, i);
-					lastButtonIndex = i;
-                    if (textArea.style.minHeight == TextAreaMinHeightClosed || textArea.style.minHeight == "") 
-                    {
-						textArea.style.minHeight = TextAreaMinHeightExtended;
-					}
-				}
-                else 
+                    projectArea.innerHTML = "";
+                    projectArea.style.opacity = "0";
+                }
+
+                lastButtonIndex = -1;
+            }
+            else
+            {
+                buttons.forEach((button, index) =>
                 {
-                    for (let j = 0; j < buttons.length; ++j) 
-                    {
-						buttons[j].class = "kd-button";
-					}
-					textArea.innerHTML = "";
-					lastButtonIndex = -1;
-                    setTimeout(function() 
-                    {
-                        textArea.style.minHeight = TextAreaMinHeightClosed;
-                        textArea.style.opacity = 0;
-					}, TransitionDuration / 2);
-				}
-				buttonLock = true;
-                setTimeout(function() 
+                    button.className =
+                        index === i
+                            ? "btn btn-5 kd-button"
+                            : "btn btn-5 kd-button-idle";
+                });
+
+                revealIncludeText(textArea, i);
+
+                textArea.style.minHeight = TextAreaMinHeightExtended;
+
+                if (projectArea)
                 {
-					buttonLock = false;
-				}, TransitionDuration);
-			}
-		});
-	}
+                    projectArea.innerHTML = "";
+                    projectArea.style.opacity = "0";
+                }
+
+                lastButtonIndex = i;
+            }
+
+            setTimeout(() =>
+            {
+                buttonLock = false;
+            }, TransitionDuration);
+        });
+    }
 });

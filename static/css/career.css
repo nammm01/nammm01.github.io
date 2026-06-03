@@ -116,7 +116,7 @@
   /* kd-button */
   position: relative;
   display: inline-block;
-  margin-left: 0.1rem;
+  /* margin-left: 0.1rem; */
   overflow: hidden;
   vertical-align: middle;
 }
@@ -166,6 +166,15 @@
     text-shadow: -2.4px -2.4px 0 #1d1a44, -2.4px -1.4px 0 #1d1a44, -2.4px -.4px 0 #1d1a44, -2.4px .6px 0 #1d1a44, -2.4px 1.6px 0 #1d1a44, -2.4px 2.6px 0 #1d1a44, -1.4px -2.4px 0 #1d1a44, -1.4px -1.4px 0 #1d1a44, -1.4px -.4px 0 #1d1a44, -1.4px .6px 0 #1d1a44, -1.4px 1.6px 0 #1d1a44, -1.4px 2.6px 0 #1d1a44, -.4px -2.4px 0 #1d1a44, -.4px -1.4px 0 #1d1a44, -.4px -.4px 0 #1d1a44, -.4px .6px 0 #1d1a44, -.4px 1.6px 0 #1d1a44, -.4px 2.6px 0 #1d1a44, .6px -2.4px 0 #1d1a44, .6px -1.4px 0 #1d1a44, .6px -.4px 0 #1d1a44, .6px .6px 0 #1d1a44, .6px 1.6px 0 #1d1a44, .6px 2.6px 0 #1d1a44, 1.6px -2.4px 0 #1d1a44, 1.6px -1.4px 0 #1d1a44, 1.6px -.4px 0 #1d1a44, 1.6px .6px 0 #1d1a44, 1.6px 1.6px 0 #1d1a44, 1.6px 2.6px 0 #1d1a44, 2.6px -2.4px 0 #1d1a44, 2.6px -1.4px 0 #1d1a44, 2.6px -.4px 0 #1d1a44, 2.6px .6px 0 #1d1a44, 2.6px 1.6px 0 #1d1a44, 2.6px 2.6px 0 #1d1a44;
     font-family: 'Grandmaster', monospace;
     font-size: 25pt; 
+    text-align: left;
+} 
+
+.edu-title-small
+{
+    color: #ffffff;
+    text-shadow: -2.4px -2.4px 0 #1d1a44, -2.4px -1.4px 0 #1d1a44, -2.4px -.4px 0 #1d1a44, -2.4px .6px 0 #1d1a44, -2.4px 1.6px 0 #1d1a44, -2.4px 2.6px 0 #1d1a44, -1.4px -2.4px 0 #1d1a44, -1.4px -1.4px 0 #1d1a44, -1.4px -.4px 0 #1d1a44, -1.4px .6px 0 #1d1a44, -1.4px 1.6px 0 #1d1a44, -1.4px 2.6px 0 #1d1a44, -.4px -2.4px 0 #1d1a44, -.4px -1.4px 0 #1d1a44, -.4px -.4px 0 #1d1a44, -.4px .6px 0 #1d1a44, -.4px 1.6px 0 #1d1a44, -.4px 2.6px 0 #1d1a44, .6px -2.4px 0 #1d1a44, .6px -1.4px 0 #1d1a44, .6px -.4px 0 #1d1a44, .6px .6px 0 #1d1a44, .6px 1.6px 0 #1d1a44, .6px 2.6px 0 #1d1a44, 1.6px -2.4px 0 #1d1a44, 1.6px -1.4px 0 #1d1a44, 1.6px -.4px 0 #1d1a44, 1.6px .6px 0 #1d1a44, 1.6px 1.6px 0 #1d1a44, 1.6px 2.6px 0 #1d1a44, 2.6px -2.4px 0 #1d1a44, 2.6px -1.4px 0 #1d1a44, 2.6px -.4px 0 #1d1a44, 2.6px .6px 0 #1d1a44, 2.6px 1.6px 0 #1d1a44, 2.6px 2.6px 0 #1d1a44;
+    font-family: 'Grandmaster', monospace;
+    font-size: 15pt; 
     letter-spacing: +0.7rem;
     text-align: left;
     padding-bottom: 25px;
@@ -185,6 +194,25 @@
 {
   font-family: 'Grandmaster', monospace;
   font-size: 20pt; 
-  padding-top: 10px;
-  padding-bottom: 0px;
+  margin-bottom: 20px;
+}
+
+.store-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.store-links img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.certificate-img {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    display: block;
 }

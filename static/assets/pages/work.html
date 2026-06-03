@@ -1,46 +1,97 @@
-<br>
-<br>
-<div class="row" style="display: flex;">
-    <div class="column">
+<hr>
+<div class="pinterest-container">
+    
+    <div class="pinterest-col">
+        
         <div class="edu">
-            <div class="edu-title">
-                Freelance Game Developer<br>2022–Present
+            <div class="edu-title">Freelance Game Developer</div>
+            <div class="we-year">2022–Present</div>   
+            <ul>
+                <li>Unity programmer</li>
+                <li>Roblox programmer</li>
+            </ul>
+        </div>
+        <div class="edu">
+            <div class="edu-title">Google Play x Unity</div>
+            <div class="we-year">2025</div>
+            Participated and completed in Google Play x Unity Program focused on Game Developer
+            <br><br>
+            <div>
+                <img src="/static/assets/image/gpxunity.png" alt="" class="certificate-img">
             </div>
-            <div class="edu-title-medium">Unity Programmer & Game Designer</div>
+        </div>
+        <div class="edu">
+            <div class="edu-title">Coding studio & Miracle Academy</div>
             <div class="we-year">2024</div>
-            <br>
-            Developed and programmed 2D and 3D game prototypes using Unity and C#. 
-            Focused on core mechanics, player controls, enemy AI, and performance optimization for mobile and PC platforms.
-            <br><br>
-            Collaborated with clients to design gameplay systems, implement requested features, and deliver polished builds. 
-            Frequently iterated based on feedback to ensure engaging and optimized player experiences.
-            <br><br>
-            Primary tools and technologies: Unity, C#, Blender, Aseprite.
-            <br>
-            <br>
-            <div class="we-year">2023</div>
-            <br>
-            Designed and developed small game projects, including survival-horror prototypes inspired by *Granny* and simulation games.  
-            Learned to implement inventory systems, object pooling, and narrative-driven gameplay.
+            Participated and completed training in Unity Engine
         </div>
+
     </div>
-    <div class="column">
+
+    <div class="pinterest-col">
+        
         <div class="edu">
-            <div class="edu-title">
-                Personal Projects & Game Jams<br>2022–Present
+            <div class="edu-title">Personal Projects & Game Jams</div>
+            <div class="we-year">2022–Present</div>
+            You can visit my game page
+            <div class="store-links">
+                <a href="https://gamorostudio.itch.io/" target="_blank">
+                    <img src="/static/assets/image/itch.png" alt="Itch.io">
+                </a>
+                <a href="https://play.google.com/store/apps/dev?id=4873325450875708420&hl=id" target="_blank">
+                    <img src="/static/assets/image/playstore.png" alt="Google Play">
+                </a>
             </div>
-            <div class="edu-title-medium">Indie Developer</div>
-            Built multiple small-scale game projects as a solo developer, experimenting with different genres such as survival horror and strategy.  
-            Participated in online game jams to improve creativity, time management, and rapid prototyping skills.
+        </div>
+        <div class="edu">
+            <div class="edu-title">Study Independent Program at Agate</div>
+            <div class="we-year">2024</div>
+            Participated and completed in the Study Independent Program focused on Game Programming
             <br><br>
-            Notable skills developed: Unity & C# programming   
+            <div>
+                <img src="/static/assets/image/msibxagate.png" alt="" class="certificate-img">
+            </div>
+        </div>
+                <div class="edu">
+            <div class="edu-title">Cisco Academy</div>
+            <div class="we-year">2023</div>
+            Participated and completed training in computer hardware, operating systems, networking fundamentals, troubleshooting, and IT support
+            <br><br>
+            <div>
+                <img src="/static/assets/image/cisco.png" alt="" style="width: 100px;">
+            </div>
         </div>
     </div>
+
 </div>
 
-<br>
-<br>
+<style>
 
+.pinterest-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    align-items: flex-start;
+}
 
-<br>
-<br>
+/* Kolom Vertikal */
+.pinterest-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* KUNCI PINTEREST: Jarak vertikal antar box di dalam kolom yang sama */
+    flex: 1; /* Membuat lebar kolom kiri dan kanan sama besar (50% - 50%) */
+}
+
+/* Opsional: Bersihkan margin bawaan tag p dan ul di dalam .edu agar seragam */
+.edu p, .edu ul {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* Responsif untuk Layar HP */
+@media (max-width: 768px) {
+    .pinterest-container {
+        flex-direction: column; /* Di HP, kolom kanan akan pindah ke bawah kolom kiri */
+    }
+}
+</style>

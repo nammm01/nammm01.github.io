@@ -1,56 +1,83 @@
-/*
-    This script handles the content assignment of project data
-*/
+/* This script handles the content assignment of project data */
 
-const ProjectNames = 
-[
-    "mapex",
-    "mirage",
-    "exalted",
+const ProjectNames = [
     "pushbox",
-    "game_tech",
-    "vpa"
-]
+    "parucare"
+];
 
 let ProjectText = [];
 
-let projTextArea = document.getElementById("project_data_area");
-
-/* Adds the included text data into the array of text. */
-for(let i = 0; i < ProjectNames.length; ++i)
-{
+/* Load all project html files */
+for (let i = 0; i < ProjectNames.length; i++) {
     ProjectText.push("");
+
     fetch("/static/assets/pages/projects/" + ProjectNames[i] + ".html")
-    .then( r => r.text() )
-    .then( t => ProjectText[i] = t )
+        .then(response => response.text())
+        .then(text => ProjectText[i] = text);
 }
 
-let bLock = false;
-let prevBtnIndex = -1; 
+function LoadProject(button, btnIndex) {
+    const projTextArea = document.getElementById("project_data_area");
+    const modal = document.getElementById("project-modal");
+    const modalContent = document.querySelector(".modal-content");
 
-function LoadProject(button, btnIndex)
-{
-    if(button.getAttribute("class") == "proj-button-active") /* case where you select the active button */
-    {
-        var x = document.getElementsByClassName("proj-button-active");
+    if (!projTextArea || !modal || !modalContent) return;
 
-        x[0].className = "proj-button";
+    const activeButton = document.querySelector(".proj-button-active");
+    if (activeButton) {
+        activeButton.classList.remove("proj-button-active");
+    }
+
+    button.classList.add("proj-button-active");
+
+    modal.style.display = "flex";
+    modal.style.opacity = 0;
+
+    projTextArea.innerHTML = ProjectText[btnIndex];
+
+    // Reset overlay scroll to top
+    modalContent.scrollTop = 0;
+
+    requestAnimationFrame(() => {
+        modal.style.opacity = 1;
+    });
+}
+
+/* Close Modal Function */
+function CloseModal() {
+    const projTextArea = document.getElementById("project_data_area");
+    const modal = document.getElementById("project-modal");
+
+    if (!modal || !projTextArea) return;
+
+    modal.style.opacity = 0;
+    
+    // Wait for fade-out animation to finish before hiding the display element completely
+    setTimeout(() => {
+        modal.style.display = "none";
         projTextArea.innerHTML = "";
-        projTextArea.style.opacity = 0;
-    }
-    else 
-    {
-        var x = document.getElementsByClassName("proj-button-active");
-        if(x.length != 0) /* case where another project is currently active and being displayed. */
-        {
-            x[0].className = "proj-button";
-            projTextArea.innerHTML = "";
-            projTextArea.style.opacity = 0;
+        
+        // Clean up active class indicators
+        const activeButton = document.querySelector(".proj-button-active");
+        if (activeButton) {
+            activeButton.classList.remove("proj-button-active");
         }
+    }, 300);
+}
 
-        /* Set this button as the active display */
-        projTextArea.innerHTML = ProjectText[btnIndex];
-        projTextArea.style.opacity = 1;
-        document.getElementById(button.getAttribute("id")).className = "proj-button-active";
-    }
+/* Filter projects */
+function filterProjects(category) {
+    const projects = document.querySelectorAll(".proj-button");
+
+    projects.forEach(project => {
+        if (category === "all") {
+            project.style.display = "block";
+        } else {
+            if (project.classList.contains(category)) {
+                project.style.display = "block";
+            } else {
+                project.style.display = "none";
+            }
+        }
+    });
 }
