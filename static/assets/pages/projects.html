@@ -7,28 +7,40 @@
 
 <div class="project-filter">
     <button onclick="filterProjects('all')">All</button>
-    <button onclick="filterProjects('game')">Game</button>
-    <button onclick="filterProjects('web')">Website</button>
-    <button onclick="filterProjects('py')">Python</button>
-    <button onclick="filterProjects('java')">Java</button>
-    <button onclick="filterProjects('ml')">Machine Learning</button>
+    <button onclick="filterProjects('app')">Apps</button>
+    <button onclick="filterProjects('game')">Games</button>
+    <button onclick="filterProjects('web')">Websites</button>
 </div>
 
 <br>
 
 <div id="proj-button-section">
-    <!-- Game -->
-    <div id="pushbox" class="proj-button game java" onclick="LoadProject(this,0);">
+    <div id="pushbox" class="proj-button game" onclick="LoadProject(this,0);">
         <img class="u-max-full-width proj-button-img" src="/static/assets/image/pushbox/thumbnail.png" alt="PushBox">
     </div>
 
-    <!-- Website -->
-    <div id="parucare" class="proj-button web ml" onclick="LoadProject(this,1);">
+    <div id="parucare" class="proj-button web" onclick="LoadProject(this,1);">
         <img class="u-max-full-width proj-button-img" src="/static/assets/image/parucare/thumbnail.png" alt="Parucare">
     </div>
 
-    <div id="pushbox" class="proj-button game py" onclick="LoadProject(this,2);">
+    <div id="snakesandladders" class="proj-button game" onclick="LoadProject(this,2);">
         <img class="u-max-full-width proj-button-img" src="/static/assets/image/snakesandladders/thumbnail.png" alt="Snakes and ladders">
+    </div>
+
+    <div id="bordir24" class="proj-button web" onclick="LoadProject(this,3);">
+        <img class="u-max-full-width proj-button-img" src="/static/assets/image/bordir24/thumbnail.png" alt="Bordir24">
+    </div>
+
+    <div id="adventureinpasar" class="proj-button game" onclick="LoadProject(this,4);">
+        <img class="u-max-full-width proj-button-img" src="/static/assets/image/adventureinpasar/thumbnail.png" alt="Adventure In Pasar">
+    </div>
+
+    <div id="jokiinaja" class="proj-button web" onclick="LoadProject(this,5);">
+        <img class="u-max-full-width proj-button-img" src="/static/assets/image/jokiinaja/thumbnail.png" alt="Jokiinaja">
+    </div>
+
+    <div id="srobot" class="proj-button game" onclick="LoadProject(this,6);">
+        <img class="u-max-full-width proj-button-img" src="/static/assets/image/srobot/thumbnail.png" alt="Srobot">
     </div>
 </div>
 
