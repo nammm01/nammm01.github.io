@@ -188,7 +188,7 @@ letter.initial
     }
   }
   @media (max-height: 500px) {
-    p {
+    p {@media
       left: 0;
       position: relative;
       top: 0;
