@@ -30,7 +30,7 @@ const projects = [
     languages: ["C#", "Unity"],
     image: "/assets/static/img/srobot.png",
     links: [
-      { label: "Demo Video", url: "https://youtu.be/ET9BlUCqKHE?si=9pCCgr1isF4F3ASA" }
+      { label: "Trailer", url: "https://youtu.be/ET9BlUCqKHE?si=9pCCgr1isF4F3ASA" }
     ],
     year: "2024",
     lastUpdate: "2024-12-24"
@@ -42,7 +42,7 @@ const projects = [
     languages: ["C#", "Unity"],
     image: "/assets/static/img/adventureinpasar.png",
     links: [
-      { label: "Itch.io", url: "https://nashmill.itch.io/adventure-in-pasar" }
+      { label: "Play on Itch.io", url: "https://nashmill.itch.io/adventure-in-pasar" }
     ],
     year: "2024",
     lastUpdate: "2024-12-25"
@@ -53,9 +53,8 @@ const projects = [
     tags: ["Web", "Machine Learning"],
     languages: ["PHP"],
     image: "/assets/static/img/parucare.png",
-    links: [
-      { label: "HKI", url: "https://drive.google.com/file/d/17oDZs2LJiFm2oXSemh7cCk1mo3slhgmh/view?usp=sharing" }
-    ],
+    links: [],
+    status: "unavailable",
     year: "2023",
     lastUpdate: "2023-05-23"
   },
@@ -65,9 +64,8 @@ const projects = [
     tags: ["Web"],
     languages: ["Laravel"],
     image: "/assets/static/img/bordir24.png",
-    links: [
-      { label: "HKI", url: "https://drive.google.com/file/d/1KE51_Kcx5g7xjhuGDJAWMpWSWh_oheLc/view?usp=sharing" }
-    ],
+    links: [],
+    status: "unavailable",
     year: "2024",
     lastUpdate: "2024-05-22"
   },
@@ -77,18 +75,23 @@ const projects = [
     tags: ["Web"],
     languages: ["Laravel"],
     image: "/assets/static/img/jokiinaja.png",
-    links: [
-      { label: "Achievement", url: "https://drive.google.com/file/d/1SGlBNVaw1fbFQR10PUoxyiAPcrfTQ3OX/view?usp=sharing" }
-    ],
+    links: [],
+    status: "unavailable",
     year: "2024",
     lastUpdate: "2024-12-21"
   }
 ];
 
+// =========================================
+// STATE
+// =========================================
 let currentSearchTerm = "";
 let currentFilterTag = "All";
 let currentSort = "default";
 
+// =========================================
+// DOM REFERENCES
+// =========================================
 const projectsGrid = document.getElementById("projects-grid");
 const projectsEmpty = document.getElementById("projects-empty");
 const searchInput = document.getElementById("project-search");
@@ -96,6 +99,9 @@ const filterButtonsContainer = document.getElementById("filter-buttons");
 const sortSelect = document.getElementById("project-sort");
 const tabNav = document.getElementById("tab-nav");
 
+// =========================================
+// RENDER PROJECTS
+// =========================================
 function renderProjects(list) {
   projectsGrid.innerHTML = "";
 
@@ -127,7 +133,15 @@ function renderProjects(list) {
 
     card.innerHTML = `
       <div class="project-image-wrap">
-        <img class="project-image" src="${project.image}" alt="Tangkapan layar proyek ${project.title}" loading="lazy">
+        <div class="image-skeleton" aria-hidden="true"><span class="image-skeleton-text">LOADING</span></div>
+        <img
+          class="project-image"
+          src="${project.image}"
+          alt="Tangkapan layar proyek ${project.title}"
+          loading="lazy"
+          decoding="async"
+          onload="this.parentElement.classList.add('is-loaded')"
+          onerror="this.parentElement.classList.add('is-loaded','is-error')">
         ${project.year ? `<span class="project-year">${project.year}</span>` : ""}
       </div>
       <div class="project-body">
@@ -143,6 +157,9 @@ function renderProjects(list) {
   });
 }
 
+// =========================================
+// SORT LOGIC
+// =========================================
 function sortProjects(list) {
   const sorted = [...list];
 
@@ -160,6 +177,9 @@ function sortProjects(list) {
   }
 }
 
+// =========================================
+// FILTER + SEARCH + SORT LOGIC (bekerja bersamaan)
+// =========================================
 function applyFilters() {
   const term = currentSearchTerm.trim().toLowerCase();
 
@@ -196,6 +216,9 @@ sortSelect.addEventListener("change", (e) => {
   applyFilters();
 });
 
+// =========================================
+// TAB NAVIGATION LOGIC
+// =========================================
 tabNav.addEventListener("click", (e) => {
   const btn = e.target.closest(".tab-btn");
   if (!btn) return;
@@ -212,7 +235,13 @@ tabNav.addEventListener("click", (e) => {
   });
 });
 
+// =========================================
+// INIT
+// =========================================
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Sinkronkan dropdown dengan nilai currentSort di atas, lalu render lewat
+// applyFilters() (bukan renderProjects langsung) supaya sort ikut kepakai
+// sejak load pertama, tanpa perlu klik tombol apa pun dulu.
 sortSelect.value = currentSort;
 applyFilters();
