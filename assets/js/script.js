@@ -30,7 +30,7 @@ const projects = [
     languages: ["C#", "Unity"],
     image: "/assets/static/img/srobot.png",
     links: [
-      { label: "Trailer", url: "https://youtu.be/ET9BlUCqKHE?si=9pCCgr1isF4F3ASA" }
+      { label: "Demo Video", url: "https://youtu.be/ET9BlUCqKHE?si=9pCCgr1isF4F3ASA" }
     ],
     year: "2024",
     lastUpdate: "2024-12-24"
@@ -42,7 +42,7 @@ const projects = [
     languages: ["C#", "Unity"],
     image: "/assets/static/img/adventureinpasar.png",
     links: [
-      { label: "Play on Itch.io", url: "https://nashmill.itch.io/adventure-in-pasar" }
+      { label: "Itch.io", url: "https://nashmill.itch.io/adventure-in-pasar" }
     ],
     year: "2024",
     lastUpdate: "2024-12-25"
@@ -53,8 +53,9 @@ const projects = [
     tags: ["Web", "Machine Learning"],
     languages: ["PHP"],
     image: "/assets/static/img/parucare.png",
-    links: [],
-    status: "unavailable",
+    links: [
+      { label: "HKI", url: "https://drive.google.com/file/d/17oDZs2LJiFm2oXSemh7cCk1mo3slhgmh/view?usp=sharing" }
+    ],
     year: "2023",
     lastUpdate: "2023-05-23"
   },
@@ -64,8 +65,9 @@ const projects = [
     tags: ["Web"],
     languages: ["Laravel"],
     image: "/assets/static/img/bordir24.png",
-    links: [],
-    status: "unavailable",
+    links: [
+      { label: "HKI", url: "https://drive.google.com/file/d/1KE51_Kcx5g7xjhuGDJAWMpWSWh_oheLc/view?usp=sharing" }
+    ],
     year: "2024",
     lastUpdate: "2024-05-22"
   },
@@ -75,8 +77,9 @@ const projects = [
     tags: ["Web"],
     languages: ["Laravel"],
     image: "/assets/static/img/jokiinaja.png",
-    links: [],
-    status: "unavailable",
+    links: [
+      { label: "Achievement", url: "https://drive.google.com/file/d/1SGlBNVaw1fbFQR10PUoxyiAPcrfTQ3OX/view?usp=sharing" }
+    ],
     year: "2024",
     lastUpdate: "2024-12-21"
   }
