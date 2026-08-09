@@ -4,7 +4,7 @@ const projects = [
     description: "A strategic puzzle game adapted from the classic Sokoban mechanics",
     tags: ["Game"],
     languages: ["Java"],
-    image: "/assets/static/img/pushbox.png",
+    image: "/assets/static/img/pushbox.webp",
     links: [
       { label: "GitHub", url: "https://github.com/nammm01/pushbox-sokoban" }
     ],
@@ -16,7 +16,7 @@ const projects = [
     description: "A digital adaptation of the classic board game",
     tags: ["Game"],
     languages: ["Python"],
-    image: "/assets/static/img/snakesandladders.png",
+    image: "/assets/static/img/snakesandladders.webp",
     links: [
       { label: "GitHub", url: "https://github.com/nammm01/snakes-and-ladders" }
     ],
@@ -28,7 +28,7 @@ const projects = [
     description: "3D platformer adventure game where players control a small robot on a mission to repair a damaged spaceship",
     tags: ["Game"],
     languages: ["C#", "Unity"],
-    image: "/assets/static/img/srobot.png",
+    image: "/assets/static/img/srobot.webp",
     links: [
       { label: "Demo Video", url: "https://youtu.be/ET9BlUCqKHE?si=9pCCgr1isF4F3ASA" }
     ],
@@ -40,7 +40,7 @@ const projects = [
     description: "a top-down adventure game where players explore a lively traditional market to recover stolen goods.",
     tags: ["Game"],
     languages: ["C#", "Unity"],
-    image: "/assets/static/img/adventureinpasar.png",
+    image: "/assets/static/img/adventureinpasar.webp",
     links: [
       { label: "Itch.io", url: "https://nashmill.itch.io/adventure-in-pasar" }
     ],
@@ -52,7 +52,7 @@ const projects = [
     description: "A website prediction lung health that build to help user/people to initial check online lung condition",
     tags: ["Web", "Machine Learning"],
     languages: ["PHP"],
-    image: "/assets/static/img/parucare.png",
+    image: "/assets/static/img/parucare.webp",
     links: [
       { label: "HKI", url: "https://drive.google.com/file/d/17oDZs2LJiFm2oXSemh7cCk1mo3slhgmh/view?usp=sharing" }
     ],
@@ -64,7 +64,7 @@ const projects = [
     description: "An online embroidery ordering platform designed to simplify the process of custom embroidery requests",
     tags: ["Web"],
     languages: ["Laravel"],
-    image: "/assets/static/img/bordir24.png",
+    image: "/assets/static/img/bordir24.webp",
     links: [
       { label: "HKI", url: "https://drive.google.com/file/d/1KE51_Kcx5g7xjhuGDJAWMpWSWh_oheLc/view?usp=sharing" }
     ],
@@ -76,7 +76,7 @@ const projects = [
     description: "a web-based service marketplace that enables users to offer and purchase freelance services through a centralized platform",
     tags: ["Web"],
     languages: ["Laravel"],
-    image: "/assets/static/img/jokiinaja.png",
+    image: "/assets/static/img/jokiinaja.webp",
     links: [
       { label: "Achievement", url: "https://drive.google.com/file/d/1SGlBNVaw1fbFQR10PUoxyiAPcrfTQ3OX/view?usp=sharing" }
     ],
